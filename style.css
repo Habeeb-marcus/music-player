@@ -7,7 +7,7 @@ html {
  body {
    margin: 0;
    min-height: 100vh;
-  background: rgb(128, 146, 170);
+  background: #c9ced3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@ html {
 .player-container {
   height: 500px;
   width: 400px;
-  background: rgb(207, 216, 232);
+  background: #e7e7e7;
   border-radius: 20px;
   box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3) ;
 }
@@ -29,7 +29,6 @@ html {
   position: relative;
   top: -50px;
   left: 50px;
-  background-color: black;
 }
 
 .img-container img {
@@ -41,6 +40,15 @@ html {
 }
 h2 {
   font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 5px 0 0;
 }
 
 .class-container {
@@ -66,10 +74,38 @@ h2 {
   width: 200px;
 }
 
-.fas {
+.progress-container {
+    /* width: 95%; */
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 40px 20px;
+    width: 90%;
+    height: 4px;
+  
+}
+
+
+.progress {
+  background-color: #242323;
+  border-radius: 5px;
+  height: 100%;
+  /* change this to show progress */
+  width: 66%;
+  transition: width 0.1s linear;
+}
+
+
+.fas {  
   font-size: 30px;
   color: rgb(129, 129, 129);
   margin-right: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fas:hover {
+  filter: brightness(80%);
 }
 
 .main-button {
@@ -91,10 +127,12 @@ h2 {
 
   h2 {
     font-size: 20px;
+    text-align: center;
   }
 
   h3 {
     font-size: 15px;
+    text-align: center;
   }
 
   .player-controls {

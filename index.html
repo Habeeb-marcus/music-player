@@ -12,15 +12,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="player-container">
+  <div class="player-container"> 
     <!-- song -->
     <div class="img-container">
+      <!-- song -->
       <img src="image/2baba.jpg" alt="Album Art"> 
     </div>
     <h2 id=title>Gaga Shuffle</h2>
     <h3 id="artist">2Baba</h3>
-    <audio src="music/2Baba-Gaaga-Shuffle.mp3" controls></audio>
-
+    <audio src="music/2Baba-Gaaga-Shuffle.mp3"></audio>
+    <!-- progress -->
+  
+    <div class="progress-container" id="progress-container">
+      <div class="progress" id="progress"></div>
+      <div class="duration-wrapper">
+        <span id="current-time">0:00</span>
+        <span id="duration">3:43</span>
+      </div>
+    </div>
+    <!-- Contrls -->
+    <div class="player-controls">
+      <i class="fas fa-backward" id="prev" title="previous"></i>
+      <i class="fas fa-play main-button" id="play" title="Play"></i>
+      <i class="fas fa-forward" id="next" title="Next"></i>
+    </div>
   </div>
 
 
