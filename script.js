@@ -11,53 +11,65 @@ const nextBtn = document.getElementById('next');
 const songs = [
   {
     audio: '2Baba-Gaaga-Shuffle',
-    image: '2baba',
+    name: '2baba',
     displayName: 'Gaga Shuffle',
     artist: '2Baba',
   },
   {
     audio: '2Face-Appreciate-It',
-    image: '2face',
+    name: '2face',
     displayName: 'Appreciate it',
     artist: '2baba',
   },
   {
     audio: '6LACK-Disconnect',
-    image: '6lack ft. khalid',
+    name: '6lack ft. khalid',
     displayName: 'Disconnect',
     artist: '6lack',
   },
   {
     audio: '6LACK-ft-Future-East-Atlanta-Love-Letter',
-    image: '6lack',
+    name: '6lack',
     displayName: 'Love Letter',
     artist: '6lack',
   },
   {
     audio: '6LACK-ft-J-Cole-Pretty-Little-Fears',
-    image: '6lack',
+    name: '6lack',
     displayName: 'Pretty little fears',
     artist: '6lack',
   },
   {
     audio: '6LACK-ft-Khalid-Seasons',
-    image: '6lack',
+    name: '6lack',
     displayName: 'seasons',
     artist: '6lack',
   },
   {
     audio: '6LACK-Let-Her-Go',
-    image: '6lack',
+    name: '6lack',
     displayName: 'let her go',
     artist: '6lack',
   },
   {
     audio: '6LACK-Sorry',
-    image: '6lack',
+    name: '6lack',
     displayName: 'sorry',
     artist: '6lack',
   },
-  6LACK-Sorry
+  {
+    audio: 'Nico & Vinz - Am I Wrong',
+    name: 'album-art1',
+    displayName: 'Am i Wrong',
+    artist: 'Nico & Vinz',
+  },
+  {
+    audio: 'Barry-Jhay-Ma-So-Pe',
+    name: 'barry-jhay',
+    displayName: 'Ma So Pe',
+    artist: 'Barry Jhay',
+  },
+  
 ];
 
 
@@ -85,3 +97,45 @@ function pauseSong() {
 
 // play or pause Event Listener
 playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
+
+ 
+// Update DOM
+function loadSong(song) {
+  title.textContent = song.displayName;
+  artist.textContent = song.artist;
+  music.src = `music/${song.audio}.mp3`;
+  image.src = `image/${song.name}.jpg`;
+}
+
+// current song
+let songIndex = 0;
+
+// On LOad - Select First Song
+loadSong(songs[songIndex]);
+
+// Previous SOng
+function prevSong() {
+  songIndex--;
+  if (songIndex < 0) {
+    songIndex = songs.length -1;
+  }
+  loadSong(songs[songIndex]);
+  playSong();
+}
+
+// Next SOng
+function nextSong() {
+  songIndex++; 
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+  loadSong(songs[songIndex]);
+  playSong();
+}
+
+
+
+
+// Event Listeners
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
